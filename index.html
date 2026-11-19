@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendientes en la nube</title>
+  <meta name="description" content="Lista de tareas instalable (PWA) desplegada en Vercel.">
+  <meta name="theme-color" content="#14213D">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Pendientes</h1>
+      <p class="estado" id="estado-red" role="status">En linea</p>
+    </header>
+
+    <form class="nueva" id="form-tarea">
+      <label for="texto" class="sr-only">Nueva tarea</label>
+      <input id="texto" type="text" placeholder="Que necesitas hacer?" autocomplete="off" required maxlength="120">
+      <button type="submit">Agregar tarea</button>
+    </form>
+
+    <div class="resumen">
+      <span id="contador">0 tareas pendientes</span>
+      <button type="button" id="btn-limpiar" class="secundario">Borrar completadas</button>
+    </div>
+
+    <ul id="lista" class="lista" aria-live="polite"></ul>
+    <p id="vacio" class="vacio" hidden>No hay tareas. Escribe una arriba para empezar.</p>
+
+    <button type="button" id="btn-instalar" class="instalar" hidden>Instalar en este dispositivo</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
